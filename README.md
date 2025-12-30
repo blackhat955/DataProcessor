@@ -2,7 +2,7 @@
 
 DataForge is a high-performance, offline-first ETL (Extract, Transform, Load) engine built for iOS. It allows users to ingest large datasets, define transformation pipelines, and export results entirely on-device, respecting memory constraints and battery life.
 
-## 🏗 Architecture
+## Architecture
 
 The application follows a modular architecture separating the Core ETL Engine from the UI Features.
 
@@ -36,21 +36,21 @@ The application follows a modular architecture separating the Core ETL Engine fr
 - **Pipeline Editor**: Visual interface to construct transformation chains.
 - **Visualization**: `DataTableView` for efficient rendering of tabular data.
 
-## 🚀 Key Features
+## Key Features
 
 - **Zero Backend**: All processing is local.
 - **Streaming First**: Designed for large CSVs (up to 200MB+).
 - **Memory Safe**: Processes data in configurable chunks (default: 1000 rows).
 - **Extensible**: New transforms can be added by conforming to `TransformOperation`.
 
-## 🛠 Tech Stack
+## Tech Stack
 
 - **Language**: Swift 6
 - **UI**: SwiftUI
 - **Concurrency**: async/await, TaskGroup, Actors
 - **Storage**: FileManager (Flat files)
 
-## 📂 Project Structure
+## Project Structure
 
 ```
 DataDock/
@@ -67,7 +67,7 @@ DataDock/
 └── Resources/          # Sample data
 ```
 
-## 📸 Screenshots
+## Screenshots
 
 | Pipeline Editor | Data Visualization |
 |:---:|:---:|
@@ -77,7 +77,7 @@ DataDock/
 | **AI Insights** | **Data Profile** |
 | <img src="screenshots/insights.png" width="300" /> | <img src="screenshots/data_profile.png" width="300" /> |
 
-## 🚦 Getting Started
+## Getting Started
 
 1. Open `DataDock.xcodeproj` in Xcode 15+.
 2. Run on Simulator or Device.
@@ -85,7 +85,7 @@ DataDock/
 4. Add transformations (e.g., Filter where `age > 30`).
 5. Run Export to save the transformed file.
 
-## 🧪 Testing Strategy
+## Testing Strategy
 
 - **Unit Tests**:
   - Test `CSVExtractor` with various delimiters and edge cases.
@@ -95,12 +95,12 @@ DataDock/
 - **Performance Tests**:
   - Measure memory usage during processing of 100MB file using Instruments.
 
-## ⚠️ Known Limitations & Future Work
+## Known Limitations & Future Work
 
 - **CSV Parsing**: Currently splits by comma. Needs robust handling of quoted newlines.
 - **Sorting**: Sort transform is not yet implemented (requires external sort for large datasets).
 - **Charts**: Visualization currently limited to Table View.
 
-## 📄 License
+## License
 
 Proprietary.
