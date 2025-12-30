@@ -1,0 +1,11 @@
+id,name,age,city,salary,active
+1,John Doe,30,New York,100000,true
+2,Jane Smith,25,London,85000,true
+3,Bob Johnson,40,Paris,120000,false
+4,Alice Brown,35,Tokyo,95000,true
+5,Charlie Wilson,28,Berlin,70000,true
+6,David Miller,45,Sydney,110000,false
+7,Eva Davis,32,Toronto,92000,true
+8,Frank Moore,29,Dubai,88000,true
+9,Grace Taylor,38,Singapore,105000,true
+10,Henry Anderson,50,Chicago,130000,false
