@@ -53,7 +53,7 @@ DataDock/
 
 ---
 
-## 🔑 Core Protocols
+##  Core Protocols
 
 ### 1. Extractor (`DataSource`)
 Designed for **Incremental Reads**. It emits an async stream of `DataChunks' to keep memory footprint low (O(1) space complexity relative to file size).
