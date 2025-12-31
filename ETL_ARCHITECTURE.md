@@ -1,6 +1,6 @@
 # DataDock ETL Engine Architecture
 
-## 🏗 Architecture Overview
+##  Architecture Overview
 
 DataDock implements a **Streaming ETL Engine** designed for iOS. It prioritizes memory safety and offline capability by processing data in chunks rather than loading entire datasets into RAM.
 
@@ -21,7 +21,7 @@ DataDock implements a **Streaming ETL Engine** designed for iOS. It prioritizes 
 
 ---
 
-## 📂 Folder Structure
+##  Folder Structure
 
 The codebase is organized by functional layers to ensure separation of concerns:
 
@@ -56,7 +56,7 @@ DataDock/
 ## 🔑 Core Protocols
 
 ### 1. Extractor (`DataSource`)
-Designed for **Incremental Reads**. It emits an async stream of `DataChunk`s to keep memory footprint low (O(1) space complexity relative to file size).
+Designed for **Incremental Reads**. It emits an async stream of `DataChunks' to keep memory footprint low (O(1) space complexity relative to file size).
 
 ```swift
 protocol DataSource: Sendable {
@@ -89,7 +89,7 @@ protocol Loader: Sendable {
 
 ---
 
-## 💡 Key Design Decisions
+##  Key Design Decisions
 
 ### 1. Streaming vs. In-Memory
 **Decision:** We chose a **Streaming** architecture using Swift's `AsyncThrowingStream`.
@@ -109,7 +109,7 @@ protocol Loader: Sendable {
 
 ---
 
-## 🛡 Error Handling & Resilience
+##  Error Handling & Resilience
 
 1.  **Cancellation**: The `PipelineEngine` checks `Task.isCancelled` between chunks. This allows users to stop long-running jobs instantly.
 2.  **Memory Pressure**: By using small chunk sizes (default 1,000 rows), we avoid system jetsam events.
@@ -118,7 +118,7 @@ protocol Loader: Sendable {
 
 ---
 
-## 🚀 Performance Considerations
+##  Performance Considerations
 
 *   **Batching**: Writing to SQLite one row at a time is slow (1000s of fsyncs). We batch writes (1,000 rows per transaction), speeding up inserts by ~100x.
 *   **Indexing**: For this ETL phase, we focus on write speed (INSERTs). Indexes should be created *after* the load is complete to avoid re-indexing overhead during insertion.
